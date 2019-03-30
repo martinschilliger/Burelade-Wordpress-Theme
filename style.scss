@@ -1,0 +1,892 @@
+@charset "UTF-8";
+
+/*!
+ Theme Name:   Radcliffe Child
+ Theme URI:    https://burelade.ch
+ Description:  Radcliffe Child Theme for burelade.ch
+ Author:       Martin Schilliger
+ Author URI:   https://martin-apps.ch
+ Template:     radcliffe
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         responsive-layout
+ Text Domain:  radcliffe-child
+*/
+
+$primary-color: #115300;
+$primary-light-color: desaturate(lighten($primary-color, 80), 50);
+$primary-border-color: desaturate(lighten($primary-color, 60), 75);
+$light-color: #ffffeb;
+$footer-link-color: lighten(desaturate($primary-color, 50), 40);
+$global-radius: 3px;
+
+@mixin amountLeftRightStyle {
+  .amount {
+    text-align: right;
+    width: 100%;
+    display: inline-block;
+    .woocommerce-Price-currencySymbol {
+      float: left;
+    }
+  }
+}
+
+body {
+  background-color: $primary-color !important;
+  // damit child-theme den parent übersteuert
+  .content {
+    background-color: $light-color;
+
+    .search-form #s {
+      background-color: $primary-light-color;
+      border: 1px $primary-light-color solid;
+      border-radius: $global-radius;
+      box-sizing: border-box;
+      font-size: 1.5em;
+      &:focus,
+      &:active {
+        border-color: $primary-color;
+      }
+    }
+  }
+
+  h1,
+  .blog-title,
+  .post-title {
+    font-family: "Love Ya Like A Sister", Helvetica, Geneva, Arial, sans-serif;
+  }
+
+  small {
+    font-size: 80%;
+  }
+
+  .header-search-block {
+    background-color: $primary-color;
+  }
+  .header {
+    border-top-color: $primary-color;
+  }
+  &.single.no-featured-image,
+  &.page.no-featured-image,
+  &.error404 {
+    .header {
+      border-bottom-color: $primary-border-color;
+    }
+  }
+
+  .main-menu {
+    // ist bei kleineren Geräten eh display:none;
+    width: 80%;
+    li {
+      margin: 0 0.2em 0 0;
+      a {
+        padding: 1em 0.8em;
+      }
+    }
+
+    li:last-child {
+      float: right;
+    }
+
+    > li:active > a {
+      background-color: rgba(black, 0.5);
+    }
+
+    > li.current-menu-item > a {
+      background: $primary-color;
+    }
+
+    a.search-toggle {
+      filter: invert(1);
+    }
+  }
+
+  &.search-results .content .page-title h4 {
+    color: #333;
+    text-transform: none;
+    font-size: 2em;
+  }
+
+  .content .posts .post {
+    // wird u.a. für die Suchresultate verwendet
+    background-position: center 80%;
+    min-height: 6rem;
+    font-size: 0.8em;
+    &::after {
+      content: " ";
+      transition: box-shadow 0.5s;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      pointer-events: none;
+    }
+    &:hover::after {
+      box-shadow: inset 0 0 2em $primary-color;
+    }
+    @media (min-width: 600px) {
+      min-height: 8rem;
+      width: 50%;
+      float: left;
+    }
+    @media (min-width: 1000px) {
+      min-height: 12rem;
+    }
+    &.no-featured-image {
+      background-color: #333;
+    }
+    .post-header {
+      padding: 0.5em 0;
+      .post-title {
+        text-transform: none;
+        margin-bottom: 0;
+        &::before {
+          display: none;
+        }
+      }
+
+      .post-meta-top {
+        display: none;
+      }
+    }
+  }
+
+  .post-header {
+    padding: 5em 0 2em;
+  }
+
+  @media (max-width: 1000px) {
+    .mobile-menu {
+      background-color: $primary-light-color;
+    }
+  }
+
+  .post-content {
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="password"],
+    select,
+    .select2-container,
+    textarea {
+      width: 100%;
+      padding: 0.75em 1em;
+      font-size: 0.8rem;
+      border: 1px $primary-border-color solid;
+      color: black;
+      background: white;
+      border-radius: $global-radius;
+      transition: border-color 0.2s ease-in-out;
+      -webkit-appearance: none;
+      &:hover {
+        border-color: $primary-color;
+      }
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 0.5em rgba($primary-color, 0.25);
+        background: white;
+        color: black;
+        outline: none;
+      }
+      &.select2 {
+        padding: 0;
+        .select2-selection {
+          padding: 0.375em 0.5em;
+          height: auto;
+          border: none;
+          font-family: "Open Sans", sans-serif;
+          -webkit-font-smoothing: antialiased;
+
+          .select2-selection__arrow {
+            top: 6px;
+          }
+        }
+      }
+    }
+
+    table {
+      background-color: white;
+      tbody > tr:nth-child(odd) > td {
+        background-color: inherit;
+      }
+    }
+
+    blockquote {
+      &::before,
+      &::after {
+        background-color: $primary-border-color;
+      }
+    }
+
+    .two-columns {
+      @media (min-width: 600px) {
+        width: 50%;
+        float: left;
+      }
+      &:last-child {
+        @media (min-width: 600px) {
+          clear: left;
+        }
+      }
+
+      &.imprint {
+        position: relative;
+        a {
+          position: absolute;
+          left: 4em;
+        }
+      }
+    }
+  }
+  .woocommerce {
+    #billing_country_field,
+    #billing_state_field {
+      display: none;
+    }
+    #order_comments {
+      height: 10em;
+    }
+
+    mark {
+      background-color: transparent;
+      font-weight: bold;
+    }
+
+    &-ordering {
+      //select wrapper
+      position: relative;
+      &::before {
+        content: " ";
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        margin-top: -3px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 5px 0 5px;
+        border-color: #808080 transparent transparent transparent;
+      }
+    }
+
+    & ul.products li.product {
+      .price {
+        color: black;
+        small {
+          color: $primary-border-color;
+        }
+      }
+      a {
+        transition: color 0.2s ease-in-out;
+        &:hover {
+          color: darken($primary-color, 10);
+          img {
+            border-color: darken($primary-color, 10);
+          }
+        }
+        img {
+          border: 1px $primary-border-color solid;
+          transition: border-color 0.2s ease-in-out;
+        }
+        &.button.add_to_cart_button {
+          font-size: 0.6em;
+          line-height: 1em;
+          padding: 0.5em 2em;
+          height: 3em;
+          vertical-align: center;
+          width: 100%;
+          text-align: center;
+          &:hover {
+            color: white;
+          }
+        }
+        h2 {
+          min-height: 6em;
+        }
+        &.added_to_cart {
+          font-size: 0.6em;
+          text-align: center;
+          width: 100%;
+          position: absolute;
+        }
+      }
+
+      .woocommerce-loop-category__title,
+      .woocommerce-loop-product__title,
+      h3 {
+        font-size: 0.8em;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        mark.count {
+          display: none;
+        }
+      }
+    }
+
+    & div.product .woocommerce-tabs ul.tabs {
+      &::before {
+        border-color: $primary-border-color;
+      }
+      li.active {
+        background-image: linear-gradient(white, $light-color);
+        border-color: $primary-border-color;
+        border-bottom-color: $light-color;
+        &::before {
+          border-color: $primary-border-color;
+        }
+      }
+    }
+    &-product-details__short-description {
+      margin-bottom: 1em;
+    }
+
+    .product_meta {
+      font-size: 0.8em;
+      span {
+        display: block;
+      }
+    }
+
+    .product .related.products {
+      clear: both;
+    }
+
+    .quantity .qty {
+      width: 5em;
+      padding-right: 0.2em;
+    }
+
+    .shop_table {
+      background-color: $primary-light-color;
+      border-color: $primary-border-color;
+      vertical-align: top;
+
+      tr.cart_item > td,
+      tr.order_item > td {
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
+        background-color: white;
+        &:not(.product-remove):not(.product-quantity) {
+          min-width: 6em;
+        }
+      }
+
+      tr.cart_item > td.product-remove > a.remove {
+        padding-left: 0.05em;
+        padding-top: 0.05em;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      tr.cart-subtotal > td {
+        background-color: $primary-light-color;
+      }
+
+      tr.order-total small.includes_tax {
+        display: inline-block;
+        float: right;
+        .amount {
+          display: inline;
+          .woocommerce-Price-currencySymbol {
+            float: none;
+          }
+        }
+      }
+
+      tr > td.product-total {
+        width: 40%;
+        @media (min-width: 600px) {
+          width: 30%;
+        }
+        @media (min-width: 900px) {
+          width: 25%;
+        }
+        @include amountLeftRightStyle;
+      }
+
+      tr.cart-subtotal > td,
+      tr.order-total > td,
+      tr.cart_item > td.product-price,
+      tr.cart_item > td.product-subtotal {
+        @include amountLeftRightStyle;
+      }
+      &.cart .product-thumbnail {
+        display: none;
+      }
+
+      tbody td,
+      tbody th,
+      tfoot td,
+      tfoot th {
+        border-color: $primary-border-color;
+        border-bottom: none;
+      }
+      tr:last-child th {
+        // WooCommerce baut table komisch
+        border-bottom: none;
+      }
+    }
+
+    &-shipping-totals {
+      .woocommerce-shipping-destination {
+        display: none;
+      }
+    }
+
+    &-checkout-payment#payment {
+      border: 1px $primary-border-color solid;
+      background-color: white;
+      div.payment_box {
+        background-color: $primary-light-color;
+        &::before {
+          border-bottom-color: $primary-light-color;
+        }
+      }
+    }
+
+    &-terms-and-conditions-wrapper {
+      font-size: 0.8em;
+    }
+
+    &-MyAccount {
+      &-navigation {
+        background-color: white;
+        border: 1px $primary-border-color solid;
+        border-radius: $global-radius;
+        padding: 0.5em;
+        ul {
+          list-style-type: none;
+          margin-left: 0;
+          li {
+            padding-left: 21px;
+            position: relative;
+            &::before {
+              content: "»";
+              display: block;
+              color: #999;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+        }
+      }
+      &-content {
+        font-size: 0.8em;
+        .my_account_orders {
+          background-color: white;
+        }
+        .form-row {
+          padding: 0;
+        }
+        .clear {
+          margin-bottom: 1em;
+        }
+        fieldset {
+          margin-top: 1em;
+          background-color: $primary-light-color;
+          border: 1px $primary-border-color solid;
+          border-radius: $global-radius;
+        }
+        #account_display_name,
+        label[for="account_display_name"] {
+          display: none;
+          + span {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &-error,
+    &-info,
+    &-message {
+      background-color: $primary-light-color;
+      position: relative;
+      overflow: hidden;
+      padding: 1em 3.5em 1em 2em;
+      box-shadow: 0 0.5em 0.5em $primary-border-color;
+      border-radius: $global-radius;
+      width: 80%;
+      margin: 0 auto 4rem !important;
+      &::before {
+        left: inherit;
+        top: inherit;
+        font-size: 1.5em;
+        position: absolute;
+        display: inline-block;
+        right: -0.25em;
+        bottom: -0.25em;
+        transform: rotate(-20deg);
+        line-height: 100%;
+        width: auto;
+        background-color: white;
+        border-radius: 999px;
+        padding: 0.5em;
+      }
+    }
+
+    // Übersicht über die Bestellung
+    ul.order_details {
+      margin: 0 0 3em;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      &::before {
+        display: none;
+      }
+      li {
+        border: none;
+        &:nth-child(even) {
+          text-align: right;
+        }
+      }
+    }
+
+    address {
+      background-color: $primary-light-color;
+      border: 1px $primary-border-color solid !important;
+      border-radius: $global-radius !important;
+    }
+
+    .blockUI.blockOverlay {
+      background-color: $light-color !important;
+    }
+
+    #respond input#submit,
+    a.button,
+    button.button,
+    input.button {
+      font-size: 0.9em;
+      &:not(:disabled) {
+        color: $light-color;
+        background-color: $primary-color;
+      }
+      &:hover {
+        color: white;
+        background-color: darken($primary-color, 10);
+      }
+      &:active {
+        transform: translateY(1px);
+      }
+
+      &.alt {
+        &:not(:disabled) {
+          color: $light-color;
+          background-color: $primary-color;
+        }
+        &:hover {
+          color: white;
+          background-color: darken($primary-color, 10);
+        }
+      }
+      &.loading,
+      &.added {
+        &::after {
+          top: 50%;
+          height: 1em;
+          margin-top: -0.5em;
+          position: absolute;
+          right: 1em;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+  &.woocommerce {
+    &-page .post {
+      &-content {
+        padding-bottom: 4rem;
+      }
+      &-meta {
+        display: none;
+      }
+      &-meta-top {
+        display: none;
+      }
+    }
+  }
+
+  .widgets {
+    .search-form #s {
+      background-color: $primary-light-color;
+      border: 1px $primary-light-color solid;
+      border-radius: $global-radius;
+      box-sizing: border-box;
+      &:focus,
+      &:active {
+        border-color: $primary-color;
+      }
+    }
+    .woocommerce.widget_shopping_cart {
+      .woocommerce {
+        &-mini-cart__buttons {
+          font-size: 1rem;
+        }
+        &-mini-cart-item {
+          font-size: 1rem;
+          img {
+            display: none;
+          }
+          .quantity {
+            float: right;
+          }
+        }
+        &-mini-cart__total {
+          .amount {
+            float: right;
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    border-color: $primary-border-color !important;
+    background-color: $primary-color;
+    padding-bottom: 2rem;
+    &,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .widget-content {
+      color: white;
+    }
+    a {
+      color: white;
+      &:hover {
+        color: lighten($footer-link-color, 20);
+      }
+    }
+
+    .widget-content {
+      .leaflet-map {
+        a {
+          color: $primary-color;
+          &:hover {
+            color: lighten($footer-link-color, 20);
+          }
+        }
+      }
+      *:first-child,
+      *:last-child {
+        .leaflet-popup {
+          margin-bottom: 20px;
+        }
+        .leaflet-popup-tip {
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+
+  .credits {
+    background-color: $primary-color;
+    color: darken($footer-link-color, 20);
+    font-size: 0.8em;
+    padding: 1em 0 0.5em;
+    a {
+      color: darken($footer-link-color, 20);
+      &:hover {
+        color: lighten($footer-link-color, 20);
+      }
+    }
+    .tothetop {
+      color: white;
+    }
+  }
+  .footer + .credits {
+    border: none;
+  }
+
+  .select2-container--default .select2 {
+    &-search--dropdown {
+      padding: 0.375em 0.5em;
+      margin: 0;
+      margin-top: -2.2em;
+      border: 0.1em $primary-color solid;
+      border-radius: $global-radius;
+      input.select2-search__field {
+        padding: 0;
+        margin: 0;
+        border: none;
+        font-size: 0.9rem;
+        outline: none;
+      }
+    }
+    &-results__option {
+      &--highlighted[aria-selected],
+      &--highlighted[data-selected] {
+        background: $primary-color;
+      }
+    }
+  }
+
+  /* * * * * * * *
+    * * * * * * * *
+    * Styles specially for Burelade */
+  .header {
+    .header-inner {
+      max-width: 88%;
+      &::before {
+        content: " ";
+        background-image: url("img/logo-schilliger.png");
+        box-shadow: 0 0 0.8em 0.15em $primary-light-color;
+        background-color: rgba($primary-light-color, 0.6);
+        border-radius: $global-radius;
+        background-size: 180px;
+        display: block;
+        width: 180px;
+        height: 147px;
+        float: left;
+        margin-right: 3em;
+        @media (max-width: 1000px) {
+          display: none;
+        }
+      }
+    }
+    background-image: linear-gradient(
+        to bottom left,
+        rgba($primary-border-color, 0.7),
+        rgba($primary-border-color, 1) 80%
+      ),
+      url("img/header.jpg");
+    background-position: auto, center;
+    background-size: auto, cover;
+    @media (min-width: 1000px) {
+      padding-bottom: 0;
+      border-bottom: 50px rgba($primary-color, 0.8) solid !important;
+    }
+
+    .blog-title {
+      .bloginfo {
+        &-title {
+          display: block;
+          @media (min-width: 600px) {
+            font-size: 2em;
+          }
+        }
+        &-dash {
+          display: none;
+        }
+        &-description {
+          display: none;
+          @media (min-width: 600px) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .main-menu {
+    width: 100%;
+    position: relative;
+    top: 45px;
+    &,
+    a {
+      &,
+      &:active,
+      &:hover,
+      &:focus {
+        color: white;
+      }
+    }
+  }
+
+  a[target="_blank"]:after {
+    content: "\f08e";
+    margin-left: 0.4em;
+    display: inline-block;
+    position: relative;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 0.5em;
+    top: -0.5em;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+.post-title {
+  position: relative;
+  margin-bottom: 7rem;
+  &::before {
+    position: absolute;
+    content: " ";
+    background-image: url("img/uberschrift-blaetter.png");
+    background-size: auto 10rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 10rem;
+    left: 0;
+    bottom: -8rem;
+    pointer-events: none;
+  }
+}
+body {
+  position: relative;
+  &::before {
+    position: absolute;
+    content: " ";
+    bottom: 0;
+    right: 0;
+    background-image: url("img/hintergrund-blaetter.png");
+    background-size: auto 40rem;
+    background-position: bottom 20rem right -5rem;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+}
+
+/* * * * * * * *
+    * * * * * * * *
+    * Ende Styles specially for Burelade */
+@media print {
+  body {
+    font-size: 12px !important;
+    .header,
+    .footer,
+    .credits {
+      display: none;
+    }
+
+    .post-header {
+      margin-top: 0;
+    }
+    &.single,
+    &.error404,
+    &.page {
+      .single.post {
+        padding-bottom: 0;
+      }
+    }
+
+    .woocommerce {
+      &-thankyou-order-received {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      &-thankyou-order-details {
+        font-size: 0.9rem;
+      }
+      &-order-details {
+        font-size: 1rem;
+        tbody td {
+          padding: 0 0.2em;
+        }
+      }
+    }
+  }
+}
