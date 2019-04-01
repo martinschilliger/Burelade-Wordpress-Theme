@@ -69,6 +69,24 @@ body {
     }
   }
 
+  .mobile-menu-container {
+    .mobile-search-form {
+      background-color: $primary-color;
+      border-top-color: $primary-border-color;
+      #s {
+        color: white;
+        &::placeholder {
+          color: $primary-light-color;
+        }
+      }
+
+      .search-button {
+        filter: invert(1);
+        // opacity: 1;
+      }
+    }
+  }
+
   h1,
   .blog-title,
   .post-title {
