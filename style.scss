@@ -274,6 +274,15 @@ body {
       }
     }
 
+    nav.woocommerce-pagination ul li {
+      a:focus,
+      a:hover,
+      span.current {
+        background: $primary-light-color;
+        color: $primary-color;
+      }
+    }
+
     & ul.products li.product {
       .price {
         color: black;
