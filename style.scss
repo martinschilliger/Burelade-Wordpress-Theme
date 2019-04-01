@@ -179,10 +179,14 @@ body {
   }
 
   @media (max-width: 1000px) {
+    .nav-toggle,
+    .nav-toggle * {
+      -webkit-tap-highlight-color: rgba($primary-color, 0.5);
+    }
     .mobile-menu-container {
       .mobile-menu {
         background-color: $primary-light-color;
-        ul * {
+        * {
           -webkit-tap-highlight-color: rgba($primary-color, 0.5);
         }
       }
