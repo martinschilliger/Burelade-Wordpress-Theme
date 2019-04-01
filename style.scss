@@ -69,24 +69,6 @@ body {
     }
   }
 
-  .mobile-menu-container {
-    .mobile-search-form {
-      background-color: $primary-color;
-      border-top-color: $primary-border-color;
-      #s {
-        color: white;
-        &::placeholder {
-          color: $primary-light-color;
-        }
-      }
-
-      .search-button {
-        filter: invert(1);
-        // opacity: 1;
-      }
-    }
-  }
-
   h1,
   .blog-title,
   .post-title {
@@ -193,8 +175,33 @@ body {
   }
 
   @media (max-width: 1000px) {
-    .mobile-menu {
-      background-color: $primary-light-color;
+    .mobile-menu-container {
+      .mobile-menu {
+        background-color: $primary-light-color;
+        a:hover {
+          background: $primary-color;
+          color: #fff;
+        }
+      }
+
+      .mobile-search-form {
+        background-color: $primary-color;
+        border-top-color: $primary-border-color;
+        #s {
+          color: white;
+          &::placeholder {
+            color: $primary-light-color;
+          }
+        }
+
+        .search-button {
+          filter: invert(1);
+          opacity: 0.75;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 
