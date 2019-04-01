@@ -278,6 +278,7 @@ body {
       border: none;
       li {
         border-color: transparent;
+        border-radius: $global-radius;
         a:focus,
         a:hover,
         span.current {
