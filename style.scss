@@ -274,12 +274,17 @@ body {
       }
     }
 
-    nav.woocommerce-pagination ul li {
-      a:focus,
-      a:hover,
-      span.current {
-        background: $primary-light-color;
-        color: $primary-color;
+    nav.woocommerce-pagination ul {
+      border: none;
+      li {
+        border-color: transparent;
+        a:focus,
+        a:hover,
+        span.current {
+          background: $primary-color;
+          color: white;
+          border-right-color: $primary-border-color;
+        }
       }
     }
 
