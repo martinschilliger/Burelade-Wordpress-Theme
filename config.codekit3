@@ -508,6 +508,13 @@
 		"oAP": "/functions.php",
 		"oF": 0
 		},
+	"/gitpuller.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/gitpuller.php",
+		"oF": 0
+		},
 	"/header.php": {
 		"cB": 0,
 		"ft": 8192,
