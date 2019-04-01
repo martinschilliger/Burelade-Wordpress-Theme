@@ -694,6 +694,20 @@ body {
       .woocommerce {
         &-mini-cart__buttons {
           font-size: 1rem;
+          a {
+            border-top-width: 0px;
+            border-bottom: 1px solid darken($footer-link-color, 20);
+            background-color: darken($footer-link-color, 20);
+            &:hover {
+              border-top: 1px solid darken($footer-link-color, 20);
+              border-bottom-width: 0px;
+              background-color: $footer-link-color;
+            }
+            &:last-child {
+              float: right;
+              clear: right;
+            }
+          }
         }
         &-mini-cart-item {
           font-size: 1rem;
@@ -726,6 +740,9 @@ body {
     h6,
     .widget-content {
       color: white;
+      li span {
+        color: white;
+      }
     }
     a {
       color: white;
