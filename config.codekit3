@@ -682,13 +682,6 @@
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
-		},
-	"/woocommerce/single-product/related.php": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/woocommerce/single-product/related.php",
-		"oF": 0
 		}
 	},
 "hooks": [
