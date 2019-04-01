@@ -1,16 +1,4 @@
 <?php
-
-/**
- * Does not filter related products by tag
- */
-//add_filter( 'woocommerce_product_related_posts_relate_by_tag', '__return_false' );
-
-/**
- * Does not filter related products by category
- */
-add_filter( 'woocommerce_product_related_posts_relate_by_category', '__return_false' );
-
-
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 function my_theme_enqueue_styles() {
     $parent_style = 'radcliffe-style';
