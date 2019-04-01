@@ -539,12 +539,12 @@
 		},
 	"/img/hintergrund-blaetter.png": {
 		"ft": 32768,
-		"iS": 477366,
+		"iS": 1044548,
 		"oA": 0,
 		"oAP": "/img/hintergrund-blaetter.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		},
@@ -561,7 +561,7 @@
 		},
 	"/img/uberschrift-blaetter.png": {
 		"ft": 32768,
-		"iS": 337856,
+		"iS": 42726,
 		"oA": 0,
 		"oAP": "/img/uberschrift-blaetter.png",
 		"oF": 0,
