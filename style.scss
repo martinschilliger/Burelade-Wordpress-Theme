@@ -69,6 +69,10 @@ body {
     font-family: "Love Ya Like A Sister", Helvetica, Geneva, Arial, sans-serif;
   }
 
+  h2 {
+    font-weight: inherit;
+  }
+
   a {
     -webkit-tap-highlight-color: $primary-light-color;
   }
