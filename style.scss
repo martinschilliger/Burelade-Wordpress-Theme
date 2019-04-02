@@ -448,8 +448,8 @@ body {
         }
       }
 
-      tr.cart-subtotal > td {
-        background-color: $primary-light-color;
+      tr.cart-subtotal {
+        display: none;
       }
 
       tr.order-total small.includes_tax {
@@ -674,6 +674,52 @@ body {
       }
       &-meta-top {
         display: none;
+      }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    // displayed on mobile only!
+    .woocommerce {
+      table.shop_table_responsive {
+        tbody {
+          tr:first-child td:first-child {
+            border-top-left-radius: $global-radius;
+            border-top-right-radius: $global-radius;
+          }
+          tr.cart_item {
+            &:not(:first-child) {
+              &:before {
+                content: "";
+                height: 2em;
+                background-color: $primary-light-color;
+                display: block;
+                border-top: 1px $primary-border-color solid;
+              }
+            }
+            > td.product-remove > a.remove:after {
+              content: attr(aria-label);
+              font-size: 0.6em;
+              display: block;
+              width: 20em;
+              position: relative;
+              top: -1.25em;
+              left: -2.5em;
+              color: red;
+            }
+            td.product-quantity {
+              padding-right: 0.1em;
+            }
+          }
+        }
+        tr.order-total {
+          margin-bottom: 0.5em;
+          th {
+            display: none;
+          }
+          td {
+            background-color: inherit;
+          }
+        }
       }
     }
   }
