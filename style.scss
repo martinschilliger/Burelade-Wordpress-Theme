@@ -20,6 +20,7 @@ $primary-border-color: desaturate(lighten($primary-color, 60), 75);
 $light-color: #ffffeb;
 $footer-link-color: lighten(desaturate($primary-color, 50), 40);
 $global-radius: 3px;
+$taxpercent: "7.7";
 
 @mixin amountLeftRightStyle {
   .amount {
@@ -460,6 +461,9 @@ body {
         display: inline-block;
         float: right;
         .amount {
+          &:after {
+            content: " – " $taxpercent "%";
+          }
           display: inline;
           .woocommerce-Price-currencySymbol {
             float: none;
