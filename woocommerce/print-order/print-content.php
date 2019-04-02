@@ -37,7 +37,12 @@ $fields = apply_filters( 'wcdn_order_info_fields', wcdn_get_order_info( $order )
 				<?php if( !$order->get_formatted_billing_address() ) _e( 'N/A', 'woocommerce-delivery-notes' ); else echo apply_filters( 'wcdn_address_billing', $order->get_formatted_billing_address(), $order ); ?>
 			</address>
 			<p class="billing-additional">
-				Tel. <?php echo apply_filters( 'wcdn_order_info_content', $fields["billing_phone"]['value'], $fields["billing_phone"] ); ?><br />
+				<?php
+				$telNr =  apply_filters( 'wcdn_order_info_content', $fields["billing_phone"]['value'], $fields["billing_phone"] );
+					if ($telNr) {
+						echo "Tel. ".$telNr;
+					}
+				?><br />
 				<?php echo apply_filters( 'wcdn_order_info_content', $fields["billing_email"]['value'], $fields["billing_email"] ); ?>
 			</p>
 
