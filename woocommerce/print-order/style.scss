@@ -1,6 +1,8 @@
 /* Simple CSS Reset and Print options
 ------------------------------------------*/
 
+@import "../../settings";
+
 html,
 body,
 div,
@@ -326,8 +328,13 @@ h2 {
   font-weight: bold;
 }
 
-.order-items tfoot tr:last-child .total-price .amount:first-child {
-  font-weight: bold;
+.order-items tfoot tr:last-child .total-price {
+  .amount:first-child {
+    font-weight: bold;
+  }
+  .includes_tax .amount:after {
+    content: " – " $taxpercent "%";
+  }
 }
 
 /* Order Notes */

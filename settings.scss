@@ -1,0 +1,7 @@
+$primary-color: #115300;
+$primary-light-color: desaturate(lighten($primary-color, 80), 50);
+$primary-border-color: desaturate(lighten($primary-color, 60), 75);
+$light-color: #ffffeb;
+$footer-link-color: lighten(desaturate($primary-color, 50), 40);
+$global-radius: 3px;
+$taxpercent: "7.7";

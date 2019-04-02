@@ -595,6 +595,19 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/settings.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/settings.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/single.php": {
 		"cB": 0,
 		"ft": 8192,
