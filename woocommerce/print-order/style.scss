@@ -160,7 +160,7 @@ h2 {
   page-break-before: auto;
   page-break-after: auto;
   tfoot tr {
-    display: none;
+    // display: none;
     &:last-child {
       display: table-row;
     }
