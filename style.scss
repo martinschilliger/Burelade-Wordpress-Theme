@@ -281,24 +281,11 @@ body {
       text-align: center;
     }
 
-    .two-columns {
-      @media (min-width: 600px) {
-        width: 50%;
-        float: left;
-      }
-      ::after {
-        @media (min-width: 600px) {
-          content: "";
-          clear: left;
-        }
-      }
-
-      &.imprint {
-        position: relative;
-        a {
-          position: absolute;
-          left: 4em;
-        }
+    &.imprint {
+      position: relative;
+      a {
+        position: absolute;
+        left: 4em;
       }
     }
   }
