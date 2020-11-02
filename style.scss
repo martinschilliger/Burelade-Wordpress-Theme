@@ -103,6 +103,12 @@ body {
       a {
         padding: 1em 0.8em;
       }
+      @media (max-width: 1200px) {
+        font-size: 0.9em;
+        a {
+          padding: 1em 0.6em;
+        }
+      }
     }
 
     li:last-child {
