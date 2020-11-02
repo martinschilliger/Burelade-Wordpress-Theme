@@ -30,6 +30,7 @@
 body {
   // damit child-theme den parent übersteuert
   background-color: $primary-color !important;
+  overflow-x: hidden; // weil 100vw ohne scrollbar gerechnet ist
 
   position: relative;
   &::before {
@@ -285,7 +286,7 @@ body {
         width: 50%;
         float: left;
       }
-      &:last-child {
+      &:last-of-type {
         @media (min-width: 600px) {
           clear: left;
         }
