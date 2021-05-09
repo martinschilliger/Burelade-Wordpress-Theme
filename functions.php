@@ -29,6 +29,7 @@ add_filter(
  */
 function woo_custom_order_formatted_billing_address()
 {
+    print_r($this);
     $address = [
         "company" => $this->billing_company,
         "first_name" => $this->billing_first_name,
@@ -43,35 +44,35 @@ function woo_custom_order_formatted_billing_address()
 
     return $address;
 }
-
-add_filter(
-    "woocommerce_order_formatted_shipping_address",
-    "woo_custom_order_formatted_shipping_address"
-);
-
-/**
- * woo_custom_order_formatted_shipping_address
- *
- * @access      public
- * @since       1.0
- * @return      void
- */
-function woo_custom_order_formatted_shipping_address()
-{
-    $address = [
-        "company" => $this->shipping_company,
-        "first_name" => $this->shipping_first_name,
-        "last_name" => $this->shipping_last_name,
-        "address_1" => $this->shipping_address_1,
-        "address_2" => $this->shipping_address_2,
-        "postcode" => $this->shipping_postcode,
-        "city" => $this->shipping_city,
-        "state" => $this->shipping_state,
-        "country" => $this->shipping_country,
-    ];
-
-    return $address;
-}
+//
+// add_filter(
+//     "woocommerce_order_formatted_shipping_address",
+//     "woo_custom_order_formatted_shipping_address"
+// );
+//
+// /**
+//  * woo_custom_order_formatted_shipping_address
+//  *
+//  * @access      public
+//  * @since       1.0
+//  * @return      void
+//  */
+// function woo_custom_order_formatted_shipping_address()
+// {
+//     $address = [
+//         "company" => $this->shipping_company,
+//         "first_name" => $this->shipping_first_name,
+//         "last_name" => $this->shipping_last_name,
+//         "address_1" => $this->shipping_address_1,
+//         "address_2" => $this->shipping_address_2,
+//         "postcode" => $this->shipping_postcode,
+//         "city" => $this->shipping_city,
+//         "state" => $this->shipping_state,
+//         "country" => $this->shipping_country,
+//     ];
+//
+//     return $address;
+// }
 
 /* ---------------------------------------------------------------------------------------------
    ENQUEUE STYLES
