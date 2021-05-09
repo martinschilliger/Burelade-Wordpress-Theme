@@ -15,11 +15,6 @@ function my_theme_enqueue_styles()
     );
 }
 
-add_filter(
-    "woocommerce_order_formatted_billing_address",
-    "woo_custom_order_formatted_billing_address"
-);
-
 /**
  * woo_custom_order_formatted_billing_address
  *
@@ -27,12 +22,9 @@ add_filter(
  * @since       1.0
  * @return      void
  */
-function woo_custom_order_formatted_billing_address($var1, $var2, $var3)
+function woo_custom_order_formatted_billing_address()
 {
     echo "Gugug";
-    print_r($var1);
-    print_r($var2);
-    print_r($var3);
     $address = [
         "company" => $this->billing_company,
         "first_name" => $this->billing_first_name,
@@ -47,6 +39,12 @@ function woo_custom_order_formatted_billing_address($var1, $var2, $var3)
 
     return $address;
 }
+
+add_filter(
+    "woocommerce_order_formatted_billing_address",
+    "woo_custom_order_formatted_billing_address"
+);
+
 //
 // add_filter(
 //     "woocommerce_order_formatted_shipping_address",
