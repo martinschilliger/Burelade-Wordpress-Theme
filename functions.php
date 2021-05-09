@@ -29,6 +29,7 @@ add_filter(
  */
 function woo_custom_order_formatted_billing_address()
 {
+    echo "Gugug";
     print_r($this);
     $address = [
         "company" => $this->billing_company,
