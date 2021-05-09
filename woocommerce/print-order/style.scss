@@ -335,7 +335,7 @@ h2 {
     font-weight: bold;
   }
   .includes_tax .amount:after {
-    content: " – " $taxpercent "%";
+    content: " (" $taxpercent "%)";
   }
 }
 

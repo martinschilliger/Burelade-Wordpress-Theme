@@ -457,7 +457,7 @@ body {
           float: right;
           .amount {
             &:after {
-              content: " – " $taxpercent "%";
+              content: " (" $taxpercent ")%";
             }
             display: inline;
             .woocommerce-Price-currencySymbol {
