@@ -331,7 +331,7 @@ h2 {
 }
 
 .order-items tfoot tr:last-child .total-price {
-  .amount:first-child {
+  .amount {
     font-weight: bold;
   }
   .includes_tax .amount:after {
