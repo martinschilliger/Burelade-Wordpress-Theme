@@ -183,7 +183,8 @@ $fields = apply_filters(
             ?></span>
 
 									<?php // if ( version_compare( get_option( 'woocommerce_version' ), '3.1.0', ">="  ) ) {
-         //     $item_meta->get_product();
+            // if ( version_compare( get_option( 'woocommerce_version' ), '3.1.0', ">="  ) ) {
+            ?>//     $item_meta->get_product();
 
          // }else {
 

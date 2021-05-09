@@ -12,17 +12,20 @@ if (!defined("ABSPATH")) {
 } ?>
 
 <?php // wcdn_before_template hook
-do_action("wcdn_before_template"); ?>
+// wcdn_before_template hook
+?>do_action("wcdn_before_template"); ?>
 
 <?php wcdn_get_template_content("print-header.php"); ?>
 
 	<?php // wcdn_before_content hook
- do_action("wcdn_before_content"); ?>
+// wcdn_before_content hook
+?>do_action("wcdn_before_content"); ?>
 
 		<?php if ($orders = wcdn_get_orders()): ?>
 
 			<?php // wcdn_before_loop hook
-   do_action("wcdn_before_loop"); ?>
+      // wcdn_before_loop hook
+      ?>do_action("wcdn_before_loop"); ?>
 
 			<?php foreach ($orders as $order): ?>
 
@@ -35,15 +38,18 @@ do_action("wcdn_before_template"); ?>
 			<?php endforeach; ?>
 
 			<?php // wcdn_after_loop hook
-   do_action("wcdn_after_loop"); ?>
+      // wcdn_after_loop hook
+      ?>do_action("wcdn_after_loop"); ?>
 
 		<?php endif; ?>
 
 	<?php // wcdn_after_content hook
- do_action("wcdn_after_content"); ?>
+// wcdn_after_content hook
+?>do_action("wcdn_after_content"); ?>
 
 <?php wcdn_get_template_content("print-footer.php"); ?>
 
 <?php // wcdn_after_template hook
-do_action("wcdn_after_template");
+// wcdn_after_template hook
+?>do_action("wcdn_after_template");
 ?>

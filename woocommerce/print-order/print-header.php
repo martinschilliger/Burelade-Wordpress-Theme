@@ -17,7 +17,8 @@ if (!defined("ABSPATH")) {
 	<title><?php wcdn_document_title(); ?></title>
 
 	<?php // wcdn_head hook
- do_action("wcdn_head"); ?>
+// wcdn_head hook
+?>do_action("wcdn_head"); ?>
 </head>
 
 <body class="<?php echo wcdn_get_template_type(); ?>">
@@ -25,6 +26,7 @@ if (!defined("ABSPATH")) {
 	<div id="container">
 
 		<?php // wcdn_head hook
-  do_action("wcdn_before_page"); ?>
+// wcdn_head hook
+?>do_action("wcdn_before_page"); ?>
 
 		<div id="page">
