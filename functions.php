@@ -17,15 +17,10 @@ function my_theme_enqueue_styles()
 
 add_filter(
     "woocommerce_order_formatted_billing_address",
-    "woo_custom_order_formatted_address"
+    "woo_custom_order_formatted_billing_address"
 );
 
-// add_filter(
-//     "woocommerce_order_formatted_shipping_address",
-//     "woo_custom_order_formatted_address"
-// );
-
-function woo_custom_order_formatted_address($fields)
+function woo_custom_order_formatted_billing_address($fields)
 {
     $address = [
         "company" => $fields["company"],
@@ -33,12 +28,32 @@ function woo_custom_order_formatted_address($fields)
         "last_name" => $fields["last_name"],
         "address_1" => $fields["address_1"],
         "address_2" => $fields["address_2"],
-        "postcode" => $fields["postcode"],
-        "city" => $fields["city"],
+        "postcode" => "",
+        "city" => $fields["postcode"] . " " . $fields["city"],
         "state" => $fields["state"],
         "country" => $fields["country"],
     ];
-    print_r($address);
+    return $address;
+}
+
+add_filter(
+    "woocommerce_order_formatted_shipping_address",
+    "woo_custom_order_formatted_shipping_address"
+);
+
+function woo_custom_order_formatted_shipping_address($fields)
+{
+    $address = [
+        "company" => $fields["company"],
+        "first_name" => $fields["first_name"],
+        "last_name" => $fields["last_name"],
+        "address_1" => $fields["address_1"],
+        "address_2" => $fields["address_2"],
+        "postcode" => "",
+        "city" => $fields["postcode"] . " " . $fields["city"],
+        "state" => $fields["state"],
+        "country" => $fields["country"],
+    ];
     return $address;
 }
 
