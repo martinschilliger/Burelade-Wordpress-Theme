@@ -20,10 +20,10 @@ add_filter(
     "woo_custom_order_formatted_address"
 );
 
-add_filter(
-    "woocommerce_order_formatted_shipping_address",
-    "woo_custom_order_formatted_address"
-);
+// add_filter(
+//     "woocommerce_order_formatted_shipping_address",
+//     "woo_custom_order_formatted_address"
+// );
 
 function woo_custom_order_formatted_address($fields)
 {
@@ -38,6 +38,7 @@ function woo_custom_order_formatted_address($fields)
         "state" => $fields->state,
         "country" => $fields->country,
     ];
+    print_r($address);
     return $address;
 }
 
