@@ -24,7 +24,7 @@ function my_theme_enqueue_styles()
  */
 function woo_custom_order_formatted_billing_address($fields)
 {
-    echo "Gugug";
+    print_r($fields);
     $address = [
         "company" => $fields->billing_company,
         "first_name" => $fields->billing_first_name,
