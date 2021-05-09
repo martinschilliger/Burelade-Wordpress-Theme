@@ -15,65 +15,31 @@ function my_theme_enqueue_styles()
     );
 }
 
-/**
- * woo_custom_order_formatted_billing_address
- *
- * @access      public
- * @since       1.0
- * @return      void
- */
-function woo_custom_order_formatted_billing_address($fields)
-{
-    print_r($fields);
-    $address = [
-        "company" => $fields->billing_company,
-        "first_name" => $fields->billing_first_name,
-        "last_name" => $fields->billing_last_name,
-        "address_1" => $fields->billing_address_1,
-        "address_2" => $fields->billing_address_2,
-        "postcode" => $fields->billing_postcode,
-        "city" => $fields->billing_city,
-        "state" => $fields->billing_state,
-        "country" => $fields->billing_country,
-    ];
-
-    return $address;
-}
-
 add_filter(
     "woocommerce_order_formatted_billing_address",
-    "woo_custom_order_formatted_billing_address"
+    "woo_custom_order_formatted_address"
 );
 
-//
-// add_filter(
-//     "woocommerce_order_formatted_shipping_address",
-//     "woo_custom_order_formatted_shipping_address"
-// );
-//
-// /**
-//  * woo_custom_order_formatted_shipping_address
-//  *
-//  * @access      public
-//  * @since       1.0
-//  * @return      void
-//  */
-// function woo_custom_order_formatted_shipping_address()
-// {
-//     $address = [
-//         "company" => $this->shipping_company,
-//         "first_name" => $this->shipping_first_name,
-//         "last_name" => $this->shipping_last_name,
-//         "address_1" => $this->shipping_address_1,
-//         "address_2" => $this->shipping_address_2,
-//         "postcode" => $this->shipping_postcode,
-//         "city" => $this->shipping_city,
-//         "state" => $this->shipping_state,
-//         "country" => $this->shipping_country,
-//     ];
-//
-//     return $address;
-// }
+add_filter(
+    "woocommerce_order_formatted_shipping_address",
+    "woo_custom_order_formatted_address"
+);
+
+function woo_custom_order_formatted_address($fields)
+{
+    $address = [
+        "company" => $fields->company,
+        "first_name" => $fields->first_name,
+        "last_name" => $fields->last_name,
+        "address_1" => $fields->address_1,
+        "address_2" => $fields->address_2,
+        "postcode" => $fields->postcode,
+        "city" => $fields->city,
+        "state" => $fields->state,
+        "country" => $fields->country,
+    ];
+    return $address;
+}
 
 /* ---------------------------------------------------------------------------------------------
    ENQUEUE STYLES
