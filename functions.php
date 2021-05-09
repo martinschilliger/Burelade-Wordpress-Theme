@@ -22,19 +22,19 @@ function my_theme_enqueue_styles()
  * @since       1.0
  * @return      void
  */
-function woo_custom_order_formatted_billing_address()
+function woo_custom_order_formatted_billing_address($fields)
 {
     echo "Gugug";
     $address = [
-        "company" => $this->billing_company,
-        "first_name" => $this->billing_first_name,
-        "last_name" => $this->billing_last_name,
-        "address_1" => $this->billing_address_1,
-        "address_2" => $this->billing_address_2,
-        "postcode" => $this->billing_postcode,
-        "city" => $this->billing_city,
-        "state" => $this->billing_state,
-        "country" => $this->billing_country,
+        "company" => $fields->billing_company,
+        "first_name" => $fields->billing_first_name,
+        "last_name" => $fields->billing_last_name,
+        "address_1" => $fields->billing_address_1,
+        "address_2" => $fields->billing_address_2,
+        "postcode" => $fields->billing_postcode,
+        "city" => $fields->billing_city,
+        "state" => $fields->billing_state,
+        "country" => $fields->billing_country,
     ];
 
     return $address;
