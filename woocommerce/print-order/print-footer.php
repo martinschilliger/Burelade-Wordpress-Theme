@@ -12,8 +12,7 @@ if (!defined("ABSPATH")) {
 		</div><!-- #page -->
 
 		<?php // wcdn_head hook
-// wcdn_head hook
-?>do_action("wcdn_after_page"); ?>
+  do_action("wcdn_after_page"); ?>
 
 	</div><!-- #container -->
 
