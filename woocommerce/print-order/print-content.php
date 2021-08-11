@@ -99,21 +99,18 @@ if (!defined("ABSPATH")) {
 		<?php do_action("wcdn_after_addresses", $order); ?>
 	</div><!-- .order-addresses -->
 
-<div class="order-info">
-	<h1><?php wcdn_document_title(); ?></h1>
-	<p class="subtitle">Nr.: <?php echo date("Y") .
-     "-" .
-     apply_filters(
-         "wcdn_order_info_content",
-         $fields["order_number"]["value"],
-         $fields["order_number"]
-     ); ?></p>
-
-	<?php do_action("wcdn_after_info", $order); ?>
-</div><!-- .order-info -->
-
 	<div class="order-info">
-		<h2><?php wcdn_document_title(); ?></h2>
+		<h1><?php wcdn_document_title(); ?></h1>
+		<p class="subtitle">Nr.: <?php echo date("Y") .
+      "-" .
+      apply_filters(
+          "wcdn_order_info_content",
+          $fields["order_number"]["value"],
+          $fields["order_number"]
+      ); ?></p>
+
+		<?php do_action("wcdn_after_info", $order); ?>
+	</div><!-- .order-info -->
 
 	<div class="order-items">
 		<table>
