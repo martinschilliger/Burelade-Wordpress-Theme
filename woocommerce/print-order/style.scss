@@ -193,10 +193,6 @@ h2 {
       width: 8rem;
       height: auto;
     }
-    &::after {
-      content: " ";
-      clear: left;
-    }
   }
   .order-date {
     order: 3;
@@ -206,20 +202,17 @@ h2 {
 /* Order Addresses */
 .order-addresses {
   margin-bottom: 2rem;
-}
+  display: flex;
+  > * {
+    flex: 1 1 50%;
+  }
 
-.order-addresses:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
-.billing-address,
-.shipping-address {
-  width: 50%;
-  float: left;
+  .billing-address {
+    order: 2;
+  }
+  .shipping-address {
+    order: 1;
+  }
 }
 
 /* Switch the addresses for invoices */

@@ -53,7 +53,9 @@ if (!defined("ABSPATH")) {
 			</address>
 		</div>
 
-		<div class="shipping-address">
+		<div class="shipping-address<?php if (
+      !$order->get_formatted_shipping_address()
+  ): ?> no-shipping-address<?php endif; ?>">
 			<h3><?php esc_attr_e("Shipping Address", "woocommerce-delivery-notes"); ?></h3>
 			<address>
 
@@ -223,7 +225,8 @@ if (!defined("ABSPATH")) {
 
 											<dt><?php esc_attr_e("Download:", "woocommerce-delivery-notes"); ?></dt>
 											<dd>
-											<?php // translators: files count.
+											<?php
+              // translators: files count.
               // translators: files count.
               ?>printf(
                esc_attr__("%s Files", "woocommerce-delivery-notes"),
