@@ -189,13 +189,17 @@ h2 {
   }
   .company-logo {
     order: 2;
+    display: flex;
+    justify-content: center;
     img {
       width: 8rem;
       height: auto;
+      object-fit: contain;
     }
   }
   .order-date {
     order: 3;
+    text-align: right;
   }
 }
 
@@ -370,7 +374,7 @@ h2 {
   font-size: 0.785em;
   line-height: 150%;
   margin-bottom: 0;
-  .colophon-footnote {
+  .colophon-imprint {
     p > span {
       width: 6em;
       display: inline-block;
