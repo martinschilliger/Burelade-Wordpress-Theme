@@ -731,6 +731,14 @@
       "pg" : 0,
       "sct" : 1
     },
+    "\/woocommerce\/print-order\/print-content alt.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/woocommerce\/print-order\/print-content alt.php",
+      "oF" : 0
+    },
     "\/woocommerce\/print-order\/print-content.php" : {
       "cB" : 0,
       "ft" : 8192,
