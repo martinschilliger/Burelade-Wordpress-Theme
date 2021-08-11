@@ -869,6 +869,7 @@ body {
   .header {
     .header-inner {
       max-width: 88%;
+      flex-wrap: wrap;
       &::before {
         content: " ";
         background-image: url("img/logo-schilliger.png");
