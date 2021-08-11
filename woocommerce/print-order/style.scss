@@ -174,9 +174,10 @@ h2 {
   padding-top: 2rem;
   height: 7rem;
   margin-bottom: 1rem;
+  display: flex;
   .company-info {
     margin-bottom: 1em;
-    float: left;
+    order: 1;
     .company-address p {
       & > span {
         width: 2.8em;
@@ -185,8 +186,7 @@ h2 {
     }
   }
   .company-logo {
-    float: left;
-    margin-left: 5rem;
+    order: 2;
     img {
       width: 8rem;
       height: auto;
@@ -197,7 +197,7 @@ h2 {
     }
   }
   .order-date {
-    float: right;
+    order: 3;
   }
 }
 
