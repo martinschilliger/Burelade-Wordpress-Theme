@@ -947,9 +947,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
 }
-.post-title {
+.content .post-title {
   position: relative;
-  margin-bottom: 7rem;
+  margin-bottom: 8rem;
   &::before {
     position: absolute;
     content: " ";
