@@ -27,7 +27,7 @@ if (!defined("ABSPATH")) {
         "wcdn_order_info_content",
         $fields["order_date"]["value"],
         $fields["order_date"]
-    ); ?>
+    ); ?>&nbsp;
 		</div>
 
 		<?php do_action("wcdn_after_branding", $order); ?>
@@ -224,7 +224,8 @@ if (!defined("ABSPATH")) {
 											<dt><?php esc_attr_e("Download:", "woocommerce-delivery-notes"); ?></dt>
 											<dd>
 											<?php // translators: files count.
-           printf(
+              // translators: files count.
+              ?>printf(
                esc_attr__("%s Files", "woocommerce-delivery-notes"),
                count($item->get_item_downloads())
            ); ?>
