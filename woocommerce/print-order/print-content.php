@@ -57,8 +57,24 @@ if (!defined("ABSPATH")) {
             )
         );
     } ?>
-
 			</address>
+			 <p class="billing-additional">
+					<?php
+     $telNr = apply_filters(
+         "wcdn_order_info_content",
+         $fields["billing_phone"]["value"],
+         $fields["billing_phone"]
+     );
+     if ($telNr) {
+         echo "Tel. " . $telNr;
+     }
+     ?><br />
+					<?php echo apply_filters(
+         "wcdn_order_info_content",
+         $fields["billing_email"]["value"],
+         $fields["billing_email"]
+     ); ?>
+			 </p>
 		</div>
 
 		<div class="shipping-address">
@@ -83,26 +99,21 @@ if (!defined("ABSPATH")) {
 		<?php do_action("wcdn_after_addresses", $order); ?>
 	</div><!-- .order-addresses -->
 
+<div class="order-info">
+	<h1><?php wcdn_document_title(); ?></h1>
+	<p class="subtitle">Nr.: <?php echo date("Y") .
+     "-" .
+     apply_filters(
+         "wcdn_order_info_content",
+         $fields["order_number"]["value"],
+         $fields["order_number"]
+     ); ?></p>
+
+	<?php do_action("wcdn_after_info", $order); ?>
+</div><!-- .order-info -->
 
 	<div class="order-info">
 		<h2><?php wcdn_document_title(); ?></h2>
-
-		<ul class="info-list">
-			<?php foreach ($fields as $field): ?>
-				<li>
-					<strong><?php echo wp_kses_post(
-         apply_filters("wcdn_order_info_name", $field["label"], $field)
-     ); ?></strong>
-					<span><?php echo wp_kses_post(
-         apply_filters("wcdn_order_info_content", $field["value"], $field)
-     ); ?></span>
-				</li>
-			<?php endforeach; ?>
-		</ul>
-
-		<?php do_action("wcdn_after_info", $order); ?>
-	</div><!-- .order-info -->
-
 
 	<div class="order-items">
 		<table>
