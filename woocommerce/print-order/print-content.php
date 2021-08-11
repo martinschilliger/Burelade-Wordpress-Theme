@@ -10,6 +10,12 @@ if (!defined("ABSPATH")) {
     exit();
 } ?>
 
+<?php $fields = apply_filters(
+    "wcdn_order_info_fields",
+    wcdn_get_order_info($order),
+    $order
+); ?>
+
 	<div class="order-branding">
 		<div class="company-logo">
 			<?php if (wcdn_get_company_logo_id()): ?>
@@ -82,11 +88,6 @@ if (!defined("ABSPATH")) {
 		<h2><?php wcdn_document_title(); ?></h2>
 
 		<ul class="info-list">
-			<?php $fields = apply_filters(
-       "wcdn_order_info_fields",
-       wcdn_get_order_info($order),
-       $order
-   ); ?>
 			<?php foreach ($fields as $field): ?>
 				<li>
 					<strong><?php echo wp_kses_post(
