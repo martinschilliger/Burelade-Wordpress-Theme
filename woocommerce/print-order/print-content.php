@@ -232,36 +232,36 @@ if (!defined("ABSPATH")) {
               $order->is_download_permitted()
           ): ?>
 
-											<dt><?php esc_attr_e("Download:", "woocommerce-delivery-notes"); ?></dt>
-											<dd>
-											<?php
+					<dt><?php esc_attr_e("Download:", "woocommerce-delivery-notes"); ?></dt>
+						<dd>
+						<?php
               // translators: files count.
               // translators: files count.
               ?>printf(
-               esc_attr__("%s Files", "woocommerce-delivery-notes"),
-               count($item->get_item_downloads())
-           ); ?>
-											</dd>
+					esc_attr__("%s Files", "woocommerce-delivery-notes"),
+					count($item->get_item_downloads())
+			); ?>
+						</dd>
 
-										<?php endif; ?>
+					<?php endif; ?>
 
-										<?php
-          wcdn_print_extra_fields($item);
-          $fields = apply_filters(
-              "wcdn_order_item_fields",
-              [],
-              $product,
-              $order,
-              $item
-          );
+					<?php
+     wcdn_print_extra_fields($item);
+     $fields = apply_filters(
+         "wcdn_order_item_fields",
+         [],
+         $product,
+         $order,
+         $item
+     );
 
-          foreach ($fields as $field): ?>
+     foreach ($fields as $field): ?>
 
 											<dt><?php echo esc_html($field["label"]); ?></dt>
 											<dd><?php echo esc_html($field["value"]); ?></dd>
 
 										<?php endforeach;
-          ?>
+     ?>
 									</dl>
 								<?php
         }
