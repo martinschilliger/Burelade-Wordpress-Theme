@@ -939,7 +939,7 @@ body {
     }
   }
 
-  a[target="_blank"]:after {
+  a[target="_blank"]:not(.imagelink):after {
     content: "\f08e";
     margin-left: 0.4em;
     display: inline-block;
