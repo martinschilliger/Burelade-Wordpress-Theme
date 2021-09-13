@@ -939,7 +939,7 @@ body {
     }
   }
 
-  :not(.imagelink) a[target="_blank"]:after {
+  a[target="_blank"]:after {
     content: "\f08e";
     margin-left: 0.4em;
     display: inline-block;
@@ -950,6 +950,9 @@ body {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  .imagelink a[target="_blank"]:after {
+    display: none;
   }
 }
 .content .post-title {
