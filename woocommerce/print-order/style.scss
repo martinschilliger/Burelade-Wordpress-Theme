@@ -334,9 +334,9 @@ h2 {
   .amount {
     font-weight: bold;
   }
-  .includes_tax .amount:after {
-    content: " – " $taxpercent "%";
-  }
+  // .includes_tax .amount:after {
+  //   content: " – " $taxpercent "%";
+  // }
 }
 
 /* Order Notes */
