@@ -174,7 +174,7 @@ function burelade_title($order)
         } */
     </style>
     <h2>Rechnung</h2>
-    <div style="margin-bottom: 3rem"><?= substr($order["date"], 0, 4).$order["orderNumber"] ?></div>
+    <div style="margin-bottom: 3rem">Nr.: <?= substr($order["date"], 0, 4)."-".$order["orderNumber"] ?></div>
 <?php
 }
 /* $order:
