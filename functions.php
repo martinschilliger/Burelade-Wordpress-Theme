@@ -83,13 +83,12 @@ function burelade_quittung($order)
 }
 </style>
 <div class="container">
-  <div class="header"><h3>Quittung</h3></div>
-  
+    <div class="header"><h3>Quittung</h3></div>
+
     <div class="label">Betrag dankend erhalten den:</div>
     <div class="lines"><div></div></div>
     <div class="label">Unterschrift:</div>
     <div class="lines"><div></div></div>
-  </div>
 </div>
     
 <style>
