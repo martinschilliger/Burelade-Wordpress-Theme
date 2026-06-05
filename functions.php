@@ -149,7 +149,7 @@ border-bottom: 1px black solid;
     border-bottom: 1px black solid;
     display: inline-block;
     padding: 0 10px;
-    margin: 0 10px 10px;
+    margin: 0 -10px 10px;
   }
 </style>
 <?php
