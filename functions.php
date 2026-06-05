@@ -59,8 +59,8 @@ function woo_custom_order_formatted_shipping_address($fields)
 
 /* Woocommerce Print Invoices & Delivery Notes */
 
-add_action("wcdn_before_footer", "my_wcdn_before_footer",$template);
-function my_wcdn_before_footer($order)
+add_action("wcdn_before_policies", "burelade_quittung",$template);
+function burelade_quittung($order)
 { ?>
 <style>
 .container {
