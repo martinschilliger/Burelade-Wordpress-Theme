@@ -140,6 +140,12 @@ border-bottom: 1px black solid;
     
 <style>
   hr { visibility: hidden; }
+  .wcdn-address-grid .wcdn-billing-address > strong {
+    font-weight: normal;
+    font-size: 10px;
+    border-bottom: 1px red solit;
+    padding-bottom: 2px;
+  }
 </style>
 <?php
 }
@@ -159,7 +165,7 @@ function burelade_title($order)
         } */
     </style>
     <h2>Rechnung</h2>
-    <div style="margin-bottom: 3rem"><?= substr($order["date"], 0, 4).$order["invoiceNumber"] ?></div>
+    <div style="margin-bottom: 3rem"><?= substr($order["date"], 0, 4).$order["orderNumber"] ?></div>
 <?php
 }
 /* $order:
