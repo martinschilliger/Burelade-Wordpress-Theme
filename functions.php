@@ -61,10 +61,41 @@ function woo_custom_order_formatted_shipping_address($fields)
 
 add_action("wcdn_before_footer", "my_wcdn_before_footer",$template);
 function my_wcdn_before_footer($order)
-{
-    ?><style>
-        hr { visibility: hidden; }
-    </style><?php
+{ ?>
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "label lines"
+    "label lines";
+  grid-template-columns: 2fr 3fr;
+  gap: 1rem;
+}
+.container div.header {
+  grid-area: header;
+}
+.container div.label {
+  grid-area: label;
+}
+.container div.lines {
+  grid-area: lines;
+}
+</style>
+<div class="container">
+  <div class="header"><h3>Quittung</h3></div>
+  
+    <div class="label">Betrag dankend erhalten den:</div>
+    <div class="lines"><div></div></div>
+    <div class="label">Unterschrift:</div>
+    <div class="lines"><div></div></div>
+  </div>
+</div>
+    
+<style>
+  hr { visibility: hidden; }
+</style>
+<?php
 }
 
 /* $order:
