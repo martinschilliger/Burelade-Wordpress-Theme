@@ -61,8 +61,8 @@ add_action("wcdn_before_footer", "my_wcdn_before_footer");
 function my_wcdn_before_footer()
 {
     ?><pre>Gugus<?php
-    // print_r($order);
-    // print_r($template);
+    print_r($order);
+    print_r($template);
     ?></pre><?php
 }
 
