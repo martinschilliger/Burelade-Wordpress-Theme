@@ -59,6 +59,37 @@ function woo_custom_order_formatted_shipping_address($fields)
 
 /* Woocommerce Print Invoices & Delivery Notes */
 
+add_action("wcdn_before_logo", "burelade_logo",$template);
+function burelade_logo($order) 
+{ ?>
+    <style>
+        .wcdn-logo {
+            text-align: center;
+            margin-bottom: -7rem;
+            position: relative;
+            height: 5rem;
+            margin-right: 7rem;
+            }
+        }
+    </style>
+<?php
+}
+
+add_action("wcdn_before_branding", "burelade_header",$template);
+function burelade_header($order) 
+{ ?>
+    <style>
+        .printdate {
+            position: absolute;
+            text-align: right;
+            margin-top: 21px;
+            }
+        }
+    </style>
+    <span class="printdate"><?= $order["documentDate"] ?></span>
+<?php
+}
+
 add_action("wcdn_before_policies", "burelade_quittung",$template);
 function burelade_quittung($order)
 { ?>
