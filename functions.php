@@ -58,13 +58,125 @@ function woo_custom_order_formatted_shipping_address($fields)
 }
 
 add_action("wcdn_before_footer", "my_wcdn_before_footer");
-function my_wcdn_before_footer($order)
+function my_wcdn_before_footer($order, $template)
 {
     ?><pre>Gugus<?php
-    print_r($order);
-    // print_r($template);
+    // print_r($order);
+    print_r($template);
     ?></pre><?php
 }
+
+/* $order:
+Array
+(
+    [id] => 4948
+    [invoiceNumber] => INV-4948
+    [documentDate] => 23. April 2026
+    [orderNumber] => 4948
+    [date] => 2026-04-23T10:45:39
+    [paymentDate] => 2026-04-23T11:07:39
+    [paymentMethod] => Barbezahlung
+    [shippingMethod] => 
+    [currency] => CHF
+    [payment_url] => 
+    [customer_note] => 
+    [billing] => Array
+        (
+            [name] => Martin Schilliger
+            [address] => Array
+                (
+                    [0] => Breitestrasse 6
+                    [1] => Oberuzwil
+                    [2] => 9242
+                )
+
+            [phone] => 0795618716
+            [email] => martin_schilliger@me.com
+        )
+
+    [shipping] => Array
+        (
+            [name] =>  
+            [address] => Array
+                (
+                )
+
+        )
+
+    [items] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Deckel Schwarz 48mm zu Konfiglas 106ml
+                    [sku] => 
+                    [price] => CHF  0.20
+                    [quantity] => 1
+                    [total] => CHF  0.20
+                    [product_id] => 3103
+                    [order_item_id] => 16779
+                    [meta] => Array
+                        (
+                        )
+
+                    [addon] => 
+                    [image_url] => https://www.burelade.ch/wp-content/uploads/2023/03/48mm-Schwarz-scaled.jpeg
+                    [image_path] => /home/burelade/www/burelade.ch/wp-content/uploads/2023/03/48mm-Schwarz-scaled.jpeg
+                )
+
+        )
+
+    [totals] => Array
+        (
+            [subtotal] => CHF  0.19
+            [shipping] => CHF  0.00
+            [total] => CHF  0.20
+            [tax_lines] => Array
+                (
+                    [0] => Array
+                        (
+                            [label] => MwSt.
+                            [value] => CHF  0.01
+                        )
+
+                )
+
+            [tax] => CHF  0.01
+        )
+
+    [refund] => Array
+        (
+            [date] => 05. Juni 2026
+            [reason] => Customer returned item
+            [total] => CHF  0.20
+            [items] => Array
+                (
+                    [0] => Array
+                        (
+                            [name] => Deckel Schwarz 48mm zu Konfiglas 106ml
+                            [sku] => 
+                            [quantity] => 1
+                            [price] => CHF  0.20
+                            [total] => CHF  0.20
+                            [meta] => Array
+                                (
+                                )
+
+                            [addon] => 
+                        )
+
+                )
+
+        )
+
+    [status] => completed
+    [extra_fields] => Array
+        (
+        )
+
+)
+
+
+*/
 
 
 /* ---------------------------------------------------------------------------------------------
