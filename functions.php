@@ -71,7 +71,7 @@ function burelade_logo($order)
             margin-right: 7rem;
         }
         .wcdn-logo img {
-            max-height: inherit;
+            max-height: 100px;
         }
     </style>
 <?php
