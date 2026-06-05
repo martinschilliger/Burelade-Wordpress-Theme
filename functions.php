@@ -61,11 +61,11 @@ add_action("wcdn_before_footer", "my_wcdn_before_footer");
 function my_wcdn_before_footer($order, $template)
 {
     // für woocommerce-delivery-notes
-    /* ?><pre>Gugus<?php
+    ?><div><?php
     // print_r($order);
     // print_r($template);
-    ?></pre><?php
-    */
+    ?></div><?php
+    
 }
 
 /* $order:
