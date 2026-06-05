@@ -151,6 +151,7 @@ border-bottom: 1px black solid;
   }
 </style>
 <?php
+    $order["billing"]["address"][2] = "Blubb";
 }
 
 
