@@ -68,9 +68,10 @@ function burelade_quittung($order)
   grid-template-areas:
     "header header"
     "signature line-1"
-    "signature line-2";
+    "thankyou line-2";
   grid-template-columns: 2fr 3fr;
   gap: 1rem;
+  margin: 0 4rem 4rem;
 }
 .container div.header {
   grid-area: header;
@@ -87,8 +88,14 @@ function burelade_quittung($order)
 .container div.line-2 {
   grid-area: line-2;
 }
+.container div.label {
+  align-content: end;
+}
+.container div.lines {
+  height: 4rem;
+}
 .container div.lines > div {
-  border-bottom: 1px black solid;
+border-bottom: 1px black solid;
   height: 100%;
 }
 </style>
