@@ -62,7 +62,7 @@ function my_wcdn_before_footer($order, $template)
 {
     ?><pre><?php
     print_r($order);
-    print_r($template);
+    // print_r($template);
     ?></pre><?php
 }
 
