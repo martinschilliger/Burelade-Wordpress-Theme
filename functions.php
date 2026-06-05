@@ -67,8 +67,11 @@ function burelade_logo($order)
             text-align: center;
             margin-bottom: -7rem;
             position: relative;
-            height: 5rem;
+            height: 6rem;
             margin-right: 7rem;
+        }
+        .wcdn-logo img {
+            max-height: inherit;
         }
     </style>
 <?php
@@ -153,7 +156,7 @@ border-bottom: 1px black solid;
   }
 </style>
 <?php
-    $order["billing"]["address"][2] = "Blubb";
+    // $order["billing"]["address"][2] = "Blubb";
 }
 
 
