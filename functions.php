@@ -62,7 +62,7 @@ function woo_custom_order_formatted_shipping_address($fields)
 add_action("wcdn_before_footer", "my_wcdn_before_footer",$template);
 function my_wcdn_before_footer($order)
 { ?>
-
+<style>
 .container {
   display: grid;
   grid-template-areas:
