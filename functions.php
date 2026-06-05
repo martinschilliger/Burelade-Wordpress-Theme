@@ -147,7 +147,9 @@ border-bottom: 1px black solid;
     font-weight: normal;
     font-size: 10px;
     border-bottom: 1px black solid;
-    margin-bottom: 10px;
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 10px 10px;
   }
 </style>
 <?php
