@@ -144,6 +144,24 @@ border-bottom: 1px black solid;
 <?php
 }
 
+
+
+
+add_action("wcdn_after_addresses", "burelade_title",$template);
+function burelade_title($order) 
+{ ?>
+    <style>
+        /* .printdate {
+            position: absolute;
+            text-align: right;
+            margin-top: 21px;
+            right: 50px;
+        } */
+    </style>
+    <h2>Rechnung</h2>
+    <div style="margin-bottom: 3rem"><?= substr($order["date"], 0, 4).$order["invoiceNumber"] ?></div>
+<?php
+}
 /* $order:
 Array
 (
