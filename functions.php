@@ -67,28 +67,38 @@ function burelade_quittung($order)
   display: grid;
   grid-template-areas:
     "header header"
-    "label lines"
-    "label lines";
+    "signature line-1"
+    "signature line-2";
   grid-template-columns: 2fr 3fr;
   gap: 1rem;
 }
 .container div.header {
   grid-area: header;
 }
-.container div.label {
-  grid-area: label;
+.container div.thankyou {
+  grid-area: thankyou;
 }
-.container div.lines {
-  grid-area: lines;
+.container div.signature {
+  grid-area: signature;
+}
+.container div.line-1 {
+  grid-area: line-1;
+}
+.container div.line-2 {
+  grid-area: line-2;
+}
+.container div.lines > div {
+  border-bottom: 1px black solid;
+  height: 100%;
 }
 </style>
 <div class="container">
-    <div class="header"><h3>Quittung</h3></div>
+    <div class="header"><h2>Quittung</h2></div>
 
-    <div class="label">Betrag dankend erhalten den:</div>
-    <div class="lines"><div></div></div>
-    <div class="label">Unterschrift:</div>
-    <div class="lines"><div></div></div>
+    <div class="label thankyou">Betrag dankend erhalten den:</div>
+    <div class="lines line-1"><div></div></div>
+    <div class="label signature">Unterschrift:</div>
+    <div class="lines line-2"><div></div></div>
 </div>
     
 <style>
