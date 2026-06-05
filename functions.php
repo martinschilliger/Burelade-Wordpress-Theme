@@ -63,7 +63,7 @@ add_action("wcdn_before_footer", "my_wcdn_before_footer",$template);
 function my_wcdn_before_footer($order)
 {
     ?><style>
-        hr { display: none; }
+        hr { visibility: hidden; }
     </style><?php
 }
 
