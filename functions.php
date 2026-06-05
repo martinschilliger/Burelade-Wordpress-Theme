@@ -144,7 +144,7 @@ border-bottom: 1px black solid;
 <style>
   hr { visibility: hidden; }
   .wcdn-address-grid {  
-    padding-left: 50%;
+    padding-left: 52%;
   }
   .wcdn-address-grid .wcdn-billing-address > strong {
     font-weight: normal;
