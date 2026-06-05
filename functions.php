@@ -57,15 +57,14 @@ function woo_custom_order_formatted_shipping_address($fields)
     return $address;
 }
 
-add_action("wcdn_before_footer", "my_wcdn_before_footer");
+/* Woocommerce Print Invoices & Delivery Notes */
+
+add_action("wcdn_before_footer", "my_wcdn_before_footer",$template);
 function my_wcdn_before_footer($order)
 {
-    // für woocommerce-delivery-notes
-    /* 
-    ?><pre>Gugus<?php
-    // print_r($order);
-    ?></pre><?php
-    */
+    ?><style>
+        hr { display: none; }
+    </style><?php
 }
 
 /* $order:
