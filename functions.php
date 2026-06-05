@@ -140,11 +140,14 @@ border-bottom: 1px black solid;
     
 <style>
   hr { visibility: hidden; }
+  .wcdn-address-grid {  
+    padding-left: 50%;
+  }
   .wcdn-address-grid .wcdn-billing-address > strong {
     font-weight: normal;
     font-size: 10px;
     border-bottom: 1px red solit;
-    padding-bottom: 2px;
+    margin-bottom: 10px;
   }
 </style>
 <?php
