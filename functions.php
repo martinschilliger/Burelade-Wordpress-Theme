@@ -60,8 +60,10 @@ function woo_custom_order_formatted_shipping_address($fields)
 add_action("wcdn_before_footer", "my_wcdn_before_footer");
 function my_wcdn_before_footer($order, $template)
 {
+    ?><pre><?php
     print_r($order);
     print_r($template);
+    ?></pre><?php
 }
 
 
