@@ -146,7 +146,7 @@ border-bottom: 1px black solid;
   .wcdn-address-grid .wcdn-billing-address > strong {
     font-weight: normal;
     font-size: 10px;
-    border-bottom: 1px red solit;
+    border-bottom: 1px black solid;
     margin-bottom: 10px;
   }
 </style>
