@@ -69,7 +69,6 @@ function burelade_logo($order)
             position: relative;
             height: 5rem;
             margin-right: 7rem;
-            }
         }
     </style>
 <?php
@@ -83,7 +82,7 @@ function burelade_header($order)
             position: absolute;
             text-align: right;
             margin-top: 21px;
-            }
+            right: 50px;
         }
     </style>
     <span class="printdate"><?= $order["documentDate"] ?></span>
