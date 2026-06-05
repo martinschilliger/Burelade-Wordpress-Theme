@@ -57,6 +57,13 @@ function woo_custom_order_formatted_shipping_address($fields)
     return $address;
 }
 
+add_action("wp_enqueue_scripts", "my_theme_enqueue_styles");
+function my_wcdn_before_footer($order, $template)
+{
+    print_r($order);
+    print_r($template);
+}
+
 /* ---------------------------------------------------------------------------------------------
    ENQUEUE STYLES
    --------------------------------------------------------------------------------------------- */
