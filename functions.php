@@ -158,20 +158,11 @@ border-bottom: 1px black solid;
 <?php
 }
 
-add_action("wcdn_before_document", "my_address_formatting",$template);
-function my_address_formatting($order) 
-{
-    $order["billing"]["address"][1] = $order["billing"]["address"][2] . ' ' . $order["billing"]["address"][1];
-    $order["billing"]["address"][2] = "";
-    ?>
-    <pre><?= print_r($order, true) ?></pre>
-    <?php
-}
-add_action("wcdn_before_addresses", "my_address_formatting2",$template);
-function my_address_formatting2($order) 
+add_action("wcdn_before_invoice_template", "my_address_formatting2");
+function my_address_formatting2($data) 
 {
     ?>
-    <pre><?= print_r($order, true) ?></pre>
+    <pre><?= print_r($data, true) ?></pre>
     <?php
 }
 
