@@ -160,10 +160,9 @@ border-bottom: 1px black solid;
 
 // Append a custom billing note as a final address line.
 add_filter( 'wcdn_billing_address', function( $lines, $order ) {
-    $note = get_post_meta( $order->get_id(), '_billing_note', true );
-    if ( $note ) {
-        $lines[] = $note;
-    }
+    ?>
+    <pre><?= print_r($lines, true) ?></pre>
+    <?php
     return $lines;
 }, 10, 2 );
 
