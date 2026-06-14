@@ -158,11 +158,16 @@ border-bottom: 1px black solid;
 <?php
 }
 
-// Append a custom billing note as a final address line.
+// Append a custom billing note as a final address line. $lines:
+//     Array
+//     (
+//         [0] => Breitestrasse 6
+//         [1] => Oberuzwil
+//         [2] => 9242
+//     )
 add_filter( 'wcdn_billing_address', function( $lines, $order ) {
-    ?>
-    <pre><?= print_r($lines, true) ?></pre>
-    <?php
+    $lines[1] = $lines[2].' '.$lines[1];
+    unset($lines[2]);
     return $lines;
 }, 10, 2 );
 
