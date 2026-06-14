@@ -160,7 +160,13 @@ border-bottom: 1px black solid;
 }
 
 
-
+wcdn_before_addresses
+add_action("wcdn_before_addresses", "my_address_formatting",$template);
+function my_address_formatting($order) 
+{
+    $order["billing"]["address"][1] = $order["billing"]["address"][2] . ' ' . $order["billing"]["address"][1];
+    unset $order["billing"]["address"][2];
+}
 
 add_action("wcdn_after_addresses", "burelade_title",$template);
 function burelade_title($order) 
