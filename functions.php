@@ -158,15 +158,14 @@ border-bottom: 1px black solid;
 <?php
 }
 
-add_action("wcdn_before_invoice_template", "my_address_formatting2");
-function my_address_formatting2(&$data) 
-{
-    $data["order"]["billing"]["address"][1] = $order["billing"]["address"][2] . ' ' . $order["billing"]["address"][1];
-    $data["order"]["billing"]["address"][2] = "";
-    ?>
-    <pre><?= print_r($data["order"], true) ?></pre>
-    <?php
-}
+// Append a custom billing note as a final address line.
+add_filter( 'wcdn_billing_address', function( $lines, $order ) {
+    $note = get_post_meta( $order->get_id(), '_billing_note', true );
+    if ( $note ) {
+        $lines[] = $note;
+    }
+    return $lines;
+}, 10, 2 );
 
 add_action("wcdn_after_addresses", "burelade_title",$template);
 function burelade_title($order) 
