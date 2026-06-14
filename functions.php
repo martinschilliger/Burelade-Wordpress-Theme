@@ -159,12 +159,12 @@ border-bottom: 1px black solid;
 }
 
 add_action("wcdn_before_invoice_template", "my_address_formatting2");
-function my_address_formatting2($data) 
+function my_address_formatting2(&$data) 
 {
     $data["order"]["billing"]["address"][1] = $order["billing"]["address"][2] . ' ' . $order["billing"]["address"][1];
     $data["order"]["billing"]["address"][2] = "";
     ?>
-    <pre><?= print_r($data, true) ?></pre>
+    <pre><?= print_r($data["order"], true) ?></pre>
     <?php
 }
 
