@@ -171,6 +171,7 @@ add_filter( 'wcdn_billing_address', function( $lines, $order ) {
     return $lines;
 }, 10, 2 );
 
+
 add_action("wcdn_after_addresses", "burelade_title",$template);
 function burelade_title($order) 
 { ?>
