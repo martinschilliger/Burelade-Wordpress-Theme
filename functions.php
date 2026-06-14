@@ -160,7 +160,7 @@ border-bottom: 1px black solid;
 
 
 add_action("wcdn_before_addresses", "my_address_formatting",$template);
-function my_address_formatting($order) 
+function my_address_formatting(&$order) 
 {
     $order["billing"]["address"][1] = $order["billing"]["address"][2] . ' ' . $order["billing"]["address"][1];
     $order["billing"]["address"][2] = "";
